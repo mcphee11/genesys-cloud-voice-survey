@@ -1,0 +1,44 @@
+{
+  "name": "Trigger WorkFlow",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/flows/executions",
+      "requestType": "POST",
+      "headers": {},
+      "requestTemplate": "{\n\"flowId\": \"${input.flowId}\",\n\"inputData\": {\n   \"Flow.conversationId\": \"${input.conversationId}\"\n   }\n}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "data",
+        "type": "object",
+        "properties": {
+          "flowId": {
+            "type": "string"
+          },
+          "conversationId": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "title": "result",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      }
+    }
+  },
+  "secure": false
+}

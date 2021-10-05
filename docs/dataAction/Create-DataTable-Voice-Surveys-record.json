@@ -1,0 +1,50 @@
+{
+  "name": "Create DataTable Voice Surveys record",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/flows/datatables/b2ab4984-0a70-45cc-b0fc-37e45bf8351e/rows",
+      "requestType": "POST",
+      "headers": {},
+      "requestTemplate": "${input.rawRequest}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "survey",
+        "type": "object",
+        "properties": {
+          "KEY": {
+            "type": "string"
+          },
+          "surveyUrl": {
+            "type": "string"
+          },
+          "question1": {
+            "type": "string"
+          },
+          "question2": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "title": "response",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      }
+    }
+  },
+  "secure": false
+}

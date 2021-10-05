@@ -1,0 +1,47 @@
+{
+  "name": "Post Survey Result",
+  "integrationType": "purecloud-data-actions",
+  "actionType": "custom",
+  "config": {
+    "request": {
+      "requestUrlTemplate": "/api/v2/quality/surveys/scorable?customerSurveyUrl=$esc.url(${input.surveyUrl})",
+      "requestType": "PUT",
+      "headers": {},
+      "requestTemplate": "{\n   \"answers\":{\n      \"comments\":\"\",\n      \"questionGroupScores\":[\n         {\n            \"questionGroupId\":\"c9318b42-70e1-48d7-87b3-f7dd0187c7db\",\n            \"markedNA\":false,\n            \"questionScores\":[\n               {\n                  \"questionId\":\"51c00a7d-4a87-41fd-aa9f-801828314ac1\",\n                  \"npsTextAnswer\":\"\",\n                  \"npsScore\":${input.question1},\n                  \"markedNA\":false\n               },\n               {\n                  \"questionId\":\"d5646d03-3282-40d5-9784-50cc788f8658\",\n                  \"freeTextAnswer\":\"${input.question2}\",\n                  \"markedNA\":false,\n                  \"comments\":null\n               }\n            ]\n         }\n      ]\n   },\n   \"status\":\"Finished\"\n}"
+    },
+    "response": {
+      "translationMap": {},
+      "translationMapDefaults": {},
+      "successTemplate": "${rawResult}"
+    }
+  },
+  "contract": {
+    "input": {
+      "inputSchema": {
+        "title": "inputs",
+        "type": "object",
+        "properties": {
+          "surveyUrl": {
+            "type": "string"
+          },
+          "question1": {
+            "type": "string"
+          },
+          "question2": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "output": {
+      "successSchema": {
+        "title": "response",
+        "type": "object",
+        "properties": {},
+        "additionalProperties": true
+      }
+    }
+  },
+  "secure": false
+}
