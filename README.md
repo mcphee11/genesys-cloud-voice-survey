@@ -1,8 +1,12 @@
 # genesys-cloud-voice-survey
 
-An example of how to use the native web surveys but in the voice channel. This is designed as an example only on whats possible with some creative configuration. Experience using the Genesys Cloud toolsets is required before trying this example.
-
 ## UPDATE
+
+**This is now a native feature in Genesys Cloud recommend not using this repo now!!!**
+
+Details can be found [here](https://help.mypurecloud.com/articles/work-with-voice-survey-flows/) I would STRONGLY recommending using the native capability now its released. I will keep this repo here for reference but will delete it after a while as its now not needed.
+
+An example of how to use the native web surveys but in the voice channel. This is designed as an example only on whats possible with some creative configuration. Experience using the Genesys Cloud toolsets is required before trying this example.
 
 With the new feature release on the 15th of April with "Architect post-call actions in voice calls" you no longer need to manually transfer customers to the flow to capture the customers inputs. Detail can be found [here](https://help.mypurecloud.com/articles/clear-post-flow-action/)
 
